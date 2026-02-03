@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width" initial-scale="1">
+    <title>contact form</title>
+<style>
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background: #f0f0f5;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 1000px;
+  margin: 50px auto;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.1);
+  overflow: hidden;
+}
+
+.left-panel {
+  flex: 1;
+  background: linear-gradient(135deg, #6a4bc8, #f7c948);
+  color: white;
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.left-panel h2 {
+  font-size: 28px;
+  margin-bottom: 10px;
+}
+
+.left-panel p {
+  font-size: 18px;
+}
+
+.right-panel {
+  flex: 1;
+  padding: 40px;
+  background: #fff;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+label {
+  margin-top: 15px;
+  font-weight: bold;
+  color: #333;
+}
+
+input, textarea {
+  margin-top: 5px;
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+}
+
+textarea {
+  resize: vertical;
+  min-height: 100px;
+}
+
+button {
+  margin-top: 20px;
+  padding: 12px;
+  background-color: #6a4bc8;
+  color: white;
+  font-size: 16px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #5633b5;
+}
+</style>
+</head>    
+<body>
+    <div class="container">
+        <div class="left-panel">
+            <h1>LET'S START <br> WORKING</h1>
+            <p>how about starting a chart</p>
+            <img src="m.lnk" alt="Illustration" style="max-width:100%; border-radius:8px;">
+
+        </div>
+        <div class="right-panel">
+            <form>
+                <label for="Name">NAME:</label>
+                <input type="text" id="name" placeholder="your name" required><br><br>
+
+                <label for="company">COMPANY:</label>
+                <input type="text" id="company" placeholder="your company name" required><br><br>
+
+                <label for="phone">PHONE:</label>
+                <input type="tel" id="phone" placeholder="your phone number" required><br><br>
+
+                <label for="email">EMAIL ADDRESS:</label>
+                <input type="email" id="email" placeholder="your email address" required><br><br>
+                
+                <label for="reason">REASON FOR CONTACT</label>
+                <input type="text" id="reason" placeholder="how we can help you" required><br><br>
+
+                <label for="other">ENYTHING ELSE WE NEED TO KNOW:</label>
+                <textarea id="other" placeholder="type your message here"></textarea><br><br>
+                <button type="submit">SEND message</button>
+
+            </form>
+        </div>
+    </div>
+</body>
+</html>
