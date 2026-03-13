@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Modern Rotating Clock</title>
+  <style>
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background: #111;
+      color: #fff;
+      font-family: Arial, sans-serif;
+    }
+
+    .clock {
+      position: relative;
+      width: 300px;
+      height: 300px;
+      border: 8px solid #00f2ff;
+      border-radius: 50%;
+      box-shadow: 0 0 30px #00f2ff;
+    }
+
+    .hand {
+      position: absolute;
+      width: 50%;
+      height: 2px;
+      background: #fff;
+      top: 50%;
+      transform-origin: 100%;
+      transform: rotate(90deg);
+      transition: transform 0.5s ease-in-out;
+    }
+
+    #hours {
+      height: 4px;
+      background: #ff007f;
+    }
+
+    #minutes {
+      height: 3px;
+      background: #00ff7f;
+    }
+
+    #seconds {
+      height: 2px;
+      background: #00f2ff;
+    }
+
+    .center {
+      position: absolute;
+      width: 12px;
+      height: 12px;
+      background: #fff;
+      border-radius: 50%;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+
+    .label {
+      position: absolute;
+      width: 100%;
+      text-align: center;
+      bottom: -40px;
+      font-size: 1.2em;
+      letter-spacing: 2px;
+    }
+  </style>
+</head>
+<body>
+  <div class="clock">
+    <div id="hours" class="hand"></div>
+    <div id="minutes" class="hand"></div>
+    <div id="seconds" class="hand"></div>
+    <div class="center"></div>
+    <div class="label">TIME</div>
+  </div>
+
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script>
+    function clockRotation() {
+      setInterval(function () {
+        var date = new Date();
+        var seconds = date.getSeconds();
+        var minutes = date.getMinutes();
+        var hours = date.getHours();
+
+        var secondsRotation = seconds * 6;
+        var minutesRotation = minutes * 6 + seconds / 10;
+        var hoursRotation = hours * 30 + minutes / 2;
+
+        $("#seconds").css({
+          transform: "rotate(" + secondsRotation + "deg)"
+        });
+        $("#minutes").css({
+          transform: "rotate(" + minutesRotation + "deg)"
+        });
+        $("#hours").css({
+          transform: "rotate(" + hoursRotation + "deg)"
+        });
+      }, 1000);
+    }
+
+    clockRotation();
+  </script>
+</body>
+</html>
